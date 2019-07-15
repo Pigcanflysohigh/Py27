@@ -8,7 +8,7 @@
 
 # author = '马林刚'
 # print('作者是：',author)
-# print('-------------------')
+# print('-'*20)
 
 red_list = []
 blue_list = []
@@ -40,7 +40,14 @@ while count < 2:
         continue
     else:
         blue_list.append(blue_num)
-        print('您选择的第',count+1,'个蓝球号码是：',blue_num)
+        #print('您选择的第',count+1,'个蓝球号码是：',blue_num)
+        print('您选择的第%s个蓝球号码是%s'%(count+1,blue_num))
         count = count + 1
 print('您已选红球号码为：',red_list)
 print('您已选蓝球号码为：',blue_list)
+
+
+#两次的计数变量最好采用不同的变量，如m 和 n
+#最后打印红球蓝球列表时，若不用列表，可以先定义一个空字符串然后每次选择的球通过+往里面写入
+#两个基本相同的while循环，代码冗余过多，后期可以尝试将其精简
+#您选择第%s个蓝球号是 % count；此处可采用格式化输出
