@@ -1,4 +1,11 @@
 # -*- coding:utf-8 -*-
+'''
+题目：
+	1.三次登录
+		{'用户名':'密码',...}
+	2.进阶 ：注册
+	3.自我扩展：增加3次锁定功能，且登录成功之后重置锁定计数值
+'''
 
 account_dic = {'admin':['admin',0],'root':['root',0],'test':['test123.',0]}
 #account_dic = {'admin':['admin',0,'phone_number','email'],'root':['root',0],'test':['test123.',0]} #注册项
