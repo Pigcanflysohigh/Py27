@@ -1,10 +1,5 @@
 # -*- coding:utf-8 -*-
 
-'''
-题目：
-    三级菜单
-'''
-
 menu = {
     '北京': {
         '海淀': {
@@ -48,23 +43,62 @@ menu = {
     },
     '山东': {},
 }
+'''
+for i in menu:
+    print(i)
 
-flag = 1
+print('-'*5)
+for j in menu['上海']:
+    print(j)
+
+print('-'*5)
+for k in menu['上海']['闵行']:
+    print(k)
+
+print('-'*5)
+for p in menu['上海']['闵行']['人民广场']:
+    print(p)
+'''
+lst_one = []
+lst_two = []
+lst_thr = []
 while True:
-    if flag = 1:
-    	input topic
-    	flag +=1
-    	input q
-    	flag -=1
-        pass
-    elif flag = 2:
-        pass
-    else:
-    topic_first = input('请选择>>>')
-    if topic_first in menu.keys():
-        #for i in menu.get(topic_first,default = None):
-        for i in menu[topic_first]:
-            #print(i)
-            topic_sec = input('请选择二级菜单>>>')
-    else:
-        print('不存在')    
+    for i in menu:
+        print(i)
+        lst_one.append(i)
+    print(lst_one)
+    sel_sfir = input('请选择>>>')
+    if sel_sfir == '上海':
+        for j in menu['上海']:
+            print(j)
+        sel_ssec = input('请选择>>>')
+        if sel_ssec == '闵行':
+            for k in menu['上海']['闵行']:
+                print(k)
+            sel_sthi = input('请选择>>>')
+            if sel_sthi == '人民广场':
+                for p in menu['上海']['闵行']['人民广场']:
+                    print(p)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
