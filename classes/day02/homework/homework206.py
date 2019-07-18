@@ -44,6 +44,7 @@ menu = {
     '山东': {},
 }
 
+# pass与continue的用法区别
 # lst_one;lst_two;lst_three;lst_four;lst_five
 # select_one;select_two;select_three;select_four;select_five
 # i;j;k;h;g
@@ -113,7 +114,8 @@ while n > 1:
             else:
                 pass
     elif select_one.upper() == 'B':
-        break
+        print('目前已是最上层,若想退出请按q')
+        continue
     elif select_one.upper() == 'Q':
         n = 0
         break
