@@ -6,12 +6,12 @@
 	2.进阶 ：注册
 	3.自我扩展：增加3次锁定功能，且登录成功之后重置锁定计数值
 '''
+#print('作者：马林刚')
 
 account_dic = {'admin':['admin',0],'root':['root',0],'test':['test123.',0]}
-#account_dic = {'admin':['admin',0,'phone_number','email'],'root':['root',0],'test':['test123.',0]} #注册项
+#account_dic = {'admin':['admin',0,'phone_number','email'],'root':['root',0],'test':['test123.',0]} #可自定义扩展注册项
 
 #flag = True
-#yn_tpl = ('y','Y','n','N')
 while True:
 	usr_name = input('请输入您的账号：')
 	usr_pwd = input('请输入您的密码：')
@@ -22,7 +22,7 @@ while True:
 		else:
 			if account_dic[usr_name][0] == usr_pwd:
 				account_dic[usr_name][1] = 0	#一旦登录成功，则重置锁定计数值
-				print('登录成功，欢迎您...')
+				print('登录成功，欢迎您%s' % usr_name)
 				break
 			else:
 				print('密码错误，请重试...')
