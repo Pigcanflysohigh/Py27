@@ -1,0 +1,19 @@
+昨日回顾
+
+今日补充：
+	嵌套的for循环
+	在for循环的过程中，进行修改循环的对象
+		永远不要对当前循环的对象进行修改，可以先将需要修改的项单独拿出来再对其循环再操作
+	深浅拷贝和赋值
+		浅拷贝：第一层变化不互相影响，第二层变化影响
+	集合
+		{value1,value2,value3...}
+		set_1 & set_2  : 求交集
+		set_1 | set_2  : 求并集(去重)
+		set_1 - set_2  : 求差集(补集)
+
+	讲一个练习题
+
+isdigist isalpha
+startwith endwith
+	lst.startwith('a')
