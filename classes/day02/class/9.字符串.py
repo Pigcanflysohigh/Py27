@@ -37,7 +37,7 @@ s = 'alex今天去洗脚城遇到了wusir'
 # l = s.split('|')
 # print(l)
 
-# s2 = '|'.join(['alex', 'alex3714', '83'])
+# s2 = '|'.joinjoin(['alex', 'alex3714', '83'])
 # print(s2)
 
 # 替换 replace
