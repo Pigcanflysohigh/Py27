@@ -24,8 +24,8 @@ def write_log(func):
 
 def auth():
     global login_flag
-    usr_name = input('>>>输入账户')
-    usr_pawd = input('>>>输入密码')
+    usr_name = input('输入账户>>>')
+    usr_pawd = input('输入密码>>>')
     with open('usr_info.txt',mode='r',encoding='utf-8') as f2:
         for line in f2:
             line = line.strip()
@@ -69,6 +69,7 @@ def article():
     print('欢迎来到文章页面')
 
 @log
+@login
 def note():
     print('欢迎来到日记页面')
 
