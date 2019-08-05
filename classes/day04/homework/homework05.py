@@ -15,7 +15,7 @@ def home_page():
     4：日记页面
     5：评论页面
     6：收藏页面
-    7：注销页面
+    7：注销
     8：退出程序
     '''
     print(home_page)
@@ -66,8 +66,11 @@ def log(func):  #记录日志修饰器
         return ret
     return inner
 
+@login
+def login2():
+    pass
 
-def regist():
+def regist():   #注册函数
     global login_flag
     global userName
     regist_name = input('输入您要注册的账号>>>')
@@ -114,29 +117,42 @@ def comment():
 def collect():
     print('欢迎%s来到收藏页面' % userName)
 
+def logout():
+    print('注销，退出登录')
+
+def exit():
+    print('结束程序，再见！')
 
 while flag:
     home_page()
     iput = input('输出选项>>>')
     while flag:
-        if iput == '2':
+        if iput == '1':
+            login2()
+            break
+        elif iput == '2':
             regist()
             break
         elif iput == '3':
             article()
-            flag = False
             #print(flag)
+            break
         elif iput == '4':
             note()
-            flag = False
+            break
         elif iput == '5':
             comment()
-            flag = False
+            break
         elif iput == '6':
             collect()
-            flag = False
+            break
         elif iput == '7':
-            pass
+            logout()
+            login_flag = False
+            break
+        elif iput == '8':
+            exit()
+            flag = False
         else:
             print('无此选项，重新选择')
             break
