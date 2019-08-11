@@ -7,9 +7,9 @@ import re
 # ret = re.findall('\d+','hello123,world456') # 匹配所有匹配项
 # print(ret)
 
-# ret = re.search('\d+','hello123,world456')   # 只匹配从左到右第一个匹配项
-# print(ret)   # 变量
-# print(ret.group())
+ret = re.search('\d+','hello123,world456')   # 只匹配从左到右第一个匹配项
+print(ret)   # 变量
+print(ret.group())
 
 # ret = re.findall('\d+(?:\.\d+)?','hello123.172,world456.234')
 # print(ret)
