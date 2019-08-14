@@ -41,12 +41,12 @@
 # print(ret.group('num3'))    # 6
 
 
-import re
-content = '136abc15332'
-regex = r'(?P<num1>\d)(?P=num1)(?P<num3>\d)'
-ret = re.search(regex,content)
-print(ret.group())
-# 332
+# import re
+# content = '136abc15332'
+# regex = r'(?P<num1>\d)(?P=num1)(?P<num3>\d)'
+# ret = re.search(regex,content)
+# print(ret.group())
+# # 332
 
 # print(ret.group('num1'))
 # ret = re.search('(?P<num1>\d)(?P=num1)','a14,b22,c3357')
@@ -59,3 +59,64 @@ print(ret.group())
 # print(ret.group(2))
 # print(ret.group('num1'))
 # print(ret.group('num2'))
+
+
+# import re
+# regex1 = r'\d'
+# regex2 = r'\d{3}'
+# content = 'abc123def456ghi'
+# ret1 = re.split(regex1,content)
+# ret2 = re.split(regex2,content)
+# print(ret1) # ['abc', '', '', 'def', '', '', 'ghi']
+# print(ret2) # ['abc', 'def', 'ghi']
+
+
+# import re
+# regex1 = r'\d'
+# regex2 = r'\d{3}'
+# content = 'abc123def456ghi'
+# ret1 = re.sub(regex1,'M',content,1)
+# ret2 = re.sub(regex2,'H',content,2)
+# print(ret1) # abcM23def456ghi
+# print(ret2) # abcHdefHghi
+
+
+import re
+regex1 = r'\d'
+regex2 = r'\d{3}'
+content = 'abc123def456ghi'
+ret1 = re.subn(regex1,'M',content)
+ret2 = re.subn(regex2,'H',content)
+print(ret1) # ('abcMMMdefMMMghi', 6)
+print(ret2) # ('abcHdefHghi', 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
