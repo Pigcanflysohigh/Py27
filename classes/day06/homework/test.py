@@ -21,7 +21,14 @@ import os
 #     for line in f1:
 #         f2.write(line)
 
-if os.path.exists('abcd.py'):
-    print('hahah')
+# if os.path.exists('abcd.py'):
+#     print('hahah')
+# else:
+#     print('no file')
+
+a = ['a','b','c','d','e']
+
+if len(a) == 3 or len(a) == 4:
+    print(len(a))
 else:
-    print('no file')
+    print('not match')
