@@ -1,0 +1,1 @@
+userinfo = r'/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day08/homework/stusystem/db/userinfo'

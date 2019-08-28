@@ -28,8 +28,54 @@
 # print(time_new)
 # #time_stamp = time_new.strip()
 
-import sys
-ret = sys.modules
-#print(type(ret))
-for k in ret:
-    print(k,':',ret[k])
+# import sys
+# ret = sys.modules
+# #print(type(ret))
+# for k in ret:
+#     print(k,':',ret[k])
+
+from datetime import datetime
+
+ret = datetime.now()
+print(ret)
+print(ret.date())
+print(ret.year)
+print(ret.month)
+print(ret.day)
+print(ret.hour)
+print(ret.minute)
+print(ret.second)
+
+print('*'*45)
+
+date2 = datetime(2018,2,23)
+print(date2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

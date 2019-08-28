@@ -1,0 +1,86 @@
+类：
+###
+角色类
+Role
+	属性：
+		账户 account_name
+		密码 account_pwd
+		身份 account_identify
+		实名 user_name
+		登录状态 login_flag
+	方法：
+		登录 login
+		查看所有课程 showAllcou
+
+管理员类(角色类)
+Administrator
+	属性：
+
+	方法：
+		创建课程 createCourses
+		创建学生账号 createAccounts
+		查看所有学生 showAllstu
+		查看所有学生的选课情况 showAllChoose
+		退出程序 quit
+		展示选项的方法 showFunc
+
+学生类(角色类)
+Student
+	属性：
+		name
+		Courses
+
+	方法：
+		选课 chCour
+		查看选课情况(self) showSelfcou
+		退出程序 quit
+		展示选项的方法 showFunc
+
+
+
+###
+课程类
+Course
+	属性：
+		价格 cou_price
+		周期 cou_time
+		课程名 cou_name
+		授课老师 cou_teacher
+
+
+
+############################################################
+文件/库(可以考虑json格式文件)：
+	user_info
+		admin|admin123|0|Vincent
+		xiaoming|123456|1|Tom
+	course_info
+		Chinese|Maths|English|Physics|Chemistry|biology|Politics|History
+	stuClass_info
+		xiaoming|Chinese;Maths;History
+
+
+#将login函数和具体判断方法执行的函数拆开写
+flag = True
+login_flag = False
+
+def login():
+	ipt_name = input('账户>>>')
+	ipt_pwd = input('密码>>>')
+	if ipt_name right and ipt_pwd right:
+		print('login successfully!')	#判断已登录的逻辑
+	if identify == 0:
+		print('管理员')
+		While login_flag:
+			func_dict = Administrator.__dict__
+			print（func_list）
+			ipt_choose = input('操作>>>')
+			if ipt_choose in func_dict:
+				func = func_dict.get(ipt_choose)
+				if func:
+					func()
+			else:
+				print('没有该功能') #可以直接输入序号进行选择，序号和功能名通过字典对应
+			
+	else:
+		print('学生')
