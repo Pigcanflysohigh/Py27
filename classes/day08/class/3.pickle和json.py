@@ -6,7 +6,7 @@ import pickle
 #     # '{"k1": "v1"}' + '\n'
 #     json.dump(dic1,f)
 #     json.dump(dic2,f)
-
+#
 # with open('file','rb') as f:
 #     ret1 = pickle.load(f)
 #     ret2 = pickle.load(f)

@@ -16,13 +16,13 @@ class Student:
 #     pickle.dump(alex3,f)
 #     pickle.dump(alex4,f)
 
-# with open('stu','rb') as f:
-#     while True:
-#         try:
-#             alex = pickle.load(f)
-#             print(alex.__dict__)
-#             print(alex.name)
-#             print(alex.age)
-#         except EOFError:
-#             break
+with open('stu','rb') as f:
+    while True:
+        try:
+            alex = pickle.load(f)
+            print(alex.__dict__)
+            print(alex.name)
+            print(alex.age)
+        except EOFError:
+            break
 
