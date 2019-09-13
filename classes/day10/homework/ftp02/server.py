@@ -1,3 +1,4 @@
+import os
 import socketserver
 import json
 import hashlib
@@ -51,8 +52,20 @@ class Myserver(socketserver.BaseRequestHandler):
 			dic = getattr(Auth,opt_dic['operate'])(opt_dic)
 			self.my_send(dic)
 		# 判断登录的结果在dic中，如果登录、注册成功，用户上传或者下载
-		# upload
-		# download
+		if dic['flag']:
+			msg = self.request.recv(1024)
+			str_msg = msg.decode('utf-8')
+			opt_dic = json.loads(str_msg)	#dic = {'filename':filename,'filesize':filesize,'operate':'upload'}
+			if dic['operate'] == 'upload':
+				# 上传
+				remote_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp02/remote'
+				filename = opt_dic['filename']
+				file_path = os.path.join(remote_path,filename)
+				with open(file_path,mode='wb') as f:
+					while opt_dic['filesize'] > 0:
+						content = self.request.recv(1024)
+						f.write(content)
+						opt_dic['filesize'] -= len(content)
 
 
 # 用类去反射一个方法，而不是用对象去反射一个方法，那么这个类必然不能是一个以self为基准的一个类，需要将类定义为staticmethod
@@ -60,3 +73,59 @@ class Myserver(socketserver.BaseRequestHandler):
 sk = socketserver.ThreadingTCPServer(('127.0.0.1',9000),Myserver)
 
 sk.serve_forever()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,4 +1,6 @@
+import os
 import socket
+import struct
 import json
 
 def send_dic(sk,dic):
@@ -32,6 +34,7 @@ def login(sk):
     res_dic = recv_dic(sk)
     if res_dic['operate'] == 'login' and res_dic['flag']:
         print('登录成功')
+        return True
     else:
         print('登录失败')
 
@@ -42,16 +45,115 @@ def register(sk):
     res_dic = recv_dic(sk)
     if res_dic['operate'] == 'register' and res_dic['flag']:
         print('注册成功')
+        return True
     else:
         print('注册失败')
 
+def upload(sk):
+    # 在本地可以输入任何路径，选择任意文件上传
+    path = input('请输入要上传的文件路径:')
+    if os.path.isfile(path):
+        filename = os.path.basename(path)
+        filesize = os.path.getsize(path)
+        dic = {'filename':filename,'filesize':filesize,'operate':'upload'}
+        str_d = json.dumps(dic)
+        # 为避免黏包，在实际发送字典之前，先把字典的字节类型的长度计算出来，然后发送字典的长度，再发字典内容
+        sk.send(str_d.encode('utf-8'))
+        with open(path,'rb') as f:
+            while filesize:
+                content = f.read(1024)
+                sk.send(content)
+                filesize -= len(content)
 
-#选择登录/注册
-opt_lst = [('登录',login),('注册',register)]
+def download(sk):
+    pass
+
+def myquit(sk):
+    pass
+
+def choose_opt(opt_lst):
+    for index, opt in enumerate(opt_lst, 1):
+        print(index, opt[0])
+    num = int(input('请输入要选择的操作序号'))
+    func = opt_lst[num - 1][1]
+    return func
+
 sk = socket.socket()
 sk.connect(('127.0.0.1',9000))
-for index,opt in enumerate(opt_lst,1):
-    print(index,opt[0])
-num = int(input('请输入要选择的操作序号'))
-func = opt_lst[num-1][1]
-func(sk)
+
+while True:
+    #选择 登录/注册
+    opt_lst = [('登录',login),('注册',register)]
+    func = choose_opt(opt_lst)
+    res = func(sk)    #登录、注册
+
+    while res: # 登录/注册成功之后，用户可选择以下操作
+        opt_lst2 = [('上传',upload),('下载',download),('退出'),myquit]
+        func = choose_opt(opt_lst2)
+        func(sk)
+
+
+# 上传
+    # 在本地你可以输入任意的路径 选择任意文件上传
+    # 将文件名和文件大小发送给server端
+    # server端根据文件大小及名字来接收与写文件
+    # 上传到远程服务器中的位置：默认的文件夹里，如remote中
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
