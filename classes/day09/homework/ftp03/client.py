@@ -1,24 +1,28 @@
 import os
 import socket
 import json
+import struct
 
 
 def upload(file_path):
     sk = socket.socket()
-    sk.connect(('127.0.0.1',9001))
+    sk.connect(('127.0.0.1',9002))
     file_name = os.path.basename(file_path)
     file_size = os.path.getsize(file_path)
 
     dic = {'file_name':file_name,'file_size':file_size}
     str_dic = json.dumps(dic)
     dic_b = str_dic.encode('utf-8')
-    sk.send(dic_b)  # 发送文件名称与大小信息
-    # 需要自定义协议，避免黏包
-    for i in range(10000000):   #此处通过增加两次发送信息的间隔来避免黏包，否则如果黏包，server端fdic接收的信息有误
-        pass
+    pack_len = struct.pack('i',len(dic_b))
+    sk.send(pack_len)  #先发自定义报头的长度
+    sk.send(dic_b)  # 再发送自定义包头的信息
     with open(file_path,mode='rb') as f:
-        content = f.read()
-        sk.send(content)
+        while file_size > 0:
+            content = f.read(1024)
+            sk.send(content)    # 再发实际信息
+            file_size -= 1024
+        else:
+            print('完毕！')
     sk.close()
 
 
@@ -28,6 +32,7 @@ def download():
 
 
 # /Users/malingang/Desktop/malingang.py
+# /Users/malingang/Desktop/socket_tcp.mp4
 
 
 username = input('账号>>>')

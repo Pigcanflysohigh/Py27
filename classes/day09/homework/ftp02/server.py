@@ -1,15 +1,18 @@
 import json
 import socket
-
+import struct
 
 def myserver():
     sk = socket.socket()
-    sk.bind(('127.0.0.1',9001))
+    sk.bind(('127.0.0.1',9002))
     sk.listen()
 
     conn,addr = sk.accept()
 
-    fdic = conn.recv(1024).decode('utf-8')
+
+    pack_len = conn.recv(4) #接收自定义报头长度
+    len_dic_b = struct.unpack('i',pack_len)[0] # unpack报头实际长度
+    fdic = conn.recv(len_dic_b).decode('utf-8') #接收报头内容
     dic = json.loads(fdic)
 
     with open(dic['file_name'],mode='wb') as f:
@@ -22,4 +25,3 @@ def myserver():
 
 myserver()
 
-# /Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day08/homework/stusystem2/stu_sys4.py
