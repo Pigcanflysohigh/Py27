@@ -45,20 +45,25 @@ class Myserver(socketserver.BaseRequestHandler):
 		str_d = json.dumps(dic)
 		self.request.send(str_d.encode('utf-8'))
 
-	def handle(self):
-		msg = self.request.recv(1024)
+	def my_recv(self,protocol = False,msg_len = 1024):
+		if protocol:
+			byte_len = self.request.recv(4)
+			msg_len = struct.unpack('i', byte_len[0])
+		msg = self.request.recv(msg_len)
 		str_msg = msg.decode('utf-8')
 		opt_dic = json.loads(str_msg)
+		return opt_dic
+
+
+	def handle(self):
+		# conn == self.request
+		opt_dic = self.my_recv()
 		if hasattr(Auth,opt_dic['operate']):
 			dic = getattr(Auth,opt_dic['operate'])(opt_dic)
 			self.my_send(dic)
 		# 判断登录的结果在dic中，如果登录、注册成功，用户上传或者下载
 		if dic['flag']:
-			byte_len = self.request.recv(4)
-			msg_len = struct.unpack('i',byte_len[0])
-			msg = self.request.recv(msg_len)
-			str_msg = msg.decode('utf-8')
-			opt_dic = json.loads(str_msg)	#dic = {'filename':filename,'filesize':filesize,'operate':'upload'}
+			opt_dic = self.my_recv(protocol=True)
 			if dic['operate'] == 'upload':
 				# 上传
 				remote_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp02/remote'

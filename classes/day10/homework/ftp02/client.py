@@ -3,9 +3,14 @@ import socket
 import struct
 import json
 
-def send_dic(sk,dic):
-    str_d = json.dumps(dic)
-    sk.send(str_d.encode('utf-8'))
+def send_dic(sk,dic,protocol = False):
+    byte_d = json.dumps(dic).encode('utf-8')
+    if protocol:    #如果protocol是true，就按照协议来执行send，否则直接发送json字典即可
+        # 为避免黏包，在实际发送字典之前，先把字典的字节类型的长度计算出来，然后发送字典的长度，再发字典内容
+        len_b = len(byte_d)
+        len_dic = struct.pack('i', len_b)  # 转换为固定的4个字节
+        sk.send(len_dic)
+    sk.send(byte_d)
 
 def recv_dic(sk):
     ret = sk.recv(1024).decode('utf-8')
@@ -56,14 +61,9 @@ def upload(sk):
         filename = os.path.basename(path)
         filesize = os.path.getsize(path)
         dic = {'filename':filename,'filesize':filesize,'operate':'upload'}
-        byte_d = json.dumps(dic).encode('utf-8')
-        # 为避免黏包，在实际发送字典之前，先把字典的字节类型的长度计算出来，然后发送字典的长度，再发字典内容
-        len_b = len(byte_d)
-        len_dic = struct.pack('i',len_b)    # 转换为固定的4个字节
-        sk.send(len_dic)
-        sk.send(byte_d)
+        send_dic(sk,dic,protocol=True)   # 表示通过协议传输，对比send_dic函数protocal参数值
         with open(path,'rb') as f:
-            while filesize:
+            while filesize > 0:
                 content = f.read(1024)
                 sk.send(content)
                 filesize -= len(content)
@@ -91,7 +91,7 @@ while True:
     res = func(sk)    #登录、注册
 
     while res: # 登录/注册成功之后，用户可选择以下操作
-        opt_lst2 = [('上传',upload),('下载',download),('退出'),myquit]
+        opt_lst2 = [('上传',upload),('下载',download),('退出',myquit)]
         func = choose_opt(opt_lst2)
         func(sk)
 
@@ -114,7 +114,7 @@ while True:
 
 
 
-
+# /Users/malingang/Desktop/linux.mkv
 
 
 
