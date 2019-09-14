@@ -65,6 +65,7 @@ def upload(sk):
         with open(path,'rb') as f:
             while filesize > 0:
                 content = f.read(1024)
+                print(filesize)
                 sk.send(content)
                 filesize -= len(content)
 

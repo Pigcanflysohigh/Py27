@@ -48,7 +48,7 @@ class Myserver(socketserver.BaseRequestHandler):
 	def my_recv(self,protocol = False,msg_len = 1024):
 		if protocol:
 			byte_len = self.request.recv(4)
-			msg_len = struct.unpack('i', byte_len[0])
+			msg_len = struct.unpack('i', byte_len)[0]
 		msg = self.request.recv(msg_len)
 		str_msg = msg.decode('utf-8')
 		opt_dic = json.loads(str_msg)
@@ -64,7 +64,7 @@ class Myserver(socketserver.BaseRequestHandler):
 		# 判断登录的结果在dic中，如果登录、注册成功，用户上传或者下载
 		if dic['flag']:
 			opt_dic = self.my_recv(protocol=True)
-			if dic['operate'] == 'upload':
+			if opt_dic['operate'] == 'upload':
 				# 上传
 				remote_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp02/remote'
 				filename = opt_dic['filename']
