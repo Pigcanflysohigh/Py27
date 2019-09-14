@@ -1,5 +1,6 @@
 import os
 import socketserver
+import struct
 import json
 import hashlib
 
@@ -53,7 +54,9 @@ class Myserver(socketserver.BaseRequestHandler):
 			self.my_send(dic)
 		# 判断登录的结果在dic中，如果登录、注册成功，用户上传或者下载
 		if dic['flag']:
-			msg = self.request.recv(1024)
+			byte_len = self.request.recv(4)
+			msg_len = struct.unpack('i',byte_len[0])
+			msg = self.request.recv(msg_len)
 			str_msg = msg.decode('utf-8')
 			opt_dic = json.loads(str_msg)	#dic = {'filename':filename,'filesize':filesize,'operate':'upload'}
 			if dic['operate'] == 'upload':

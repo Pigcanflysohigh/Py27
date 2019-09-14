@@ -56,9 +56,12 @@ def upload(sk):
         filename = os.path.basename(path)
         filesize = os.path.getsize(path)
         dic = {'filename':filename,'filesize':filesize,'operate':'upload'}
-        str_d = json.dumps(dic)
+        byte_d = json.dumps(dic).encode('utf-8')
         # 为避免黏包，在实际发送字典之前，先把字典的字节类型的长度计算出来，然后发送字典的长度，再发字典内容
-        sk.send(str_d.encode('utf-8'))
+        len_b = len(byte_d)
+        len_dic = struct.pack('i',len_b)    # 转换为固定的4个字节
+        sk.send(len_dic)
+        sk.send(byte_d)
         with open(path,'rb') as f:
             while filesize:
                 content = f.read(1024)
