@@ -69,7 +69,10 @@ def upload(sk):
                 filesize -= len(content)
 
 def download(sk):
-    pass
+    # 输入文件名，会默认从server端的remote文件夹下拉去文件
+    path = input('请输入要下载的文件:')
+    dic = {'file':path,'operate':'download'}
+    send_dic(sk,dic,True)
 
 def myquit(sk):
     pass

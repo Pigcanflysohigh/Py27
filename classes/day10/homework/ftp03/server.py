@@ -64,9 +64,10 @@ class Myserver(socketserver.BaseRequestHandler):
 		# 判断登录的结果在dic中，如果登录、注册成功，用户上传或者下载
 		if dic['flag']:
 			opt_dic = self.my_recv(protocol=True)
+			remote_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp03/remote'
 			if opt_dic['operate'] == 'upload':
 				# 上传
-				remote_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp03/remote'
+				# remote_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp03/remote'
 				filename = opt_dic['filename']
 				file_path = os.path.join(remote_path,filename)
 				with open(file_path,mode='wb') as f:
@@ -75,7 +76,11 @@ class Myserver(socketserver.BaseRequestHandler):
 						f.write(content)
 						opt_dic['filesize'] -= len(content)
 			elif opt_dic['operate'] == 'download':
-				print('执行下载函数')
+				file = os.path.join(remote_path,opt_dic['file'])
+				if os.path.isfile(file):
+					print('there is a file')
+				else:
+					print('no file')
 
 # server端需要完成反射
 
