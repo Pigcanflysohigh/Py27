@@ -1,0 +1,2 @@
+2019-09-15 14:05:32 - root - ERROR -logging模块2 -10:  --> 4 this is error logs
+2019-09-15 14:05:32 - root - CRITICAL -logging模块2 -11:  --> 5 this is critical logs

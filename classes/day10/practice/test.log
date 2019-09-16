@@ -1,0 +1,4 @@
+INFO:root:-->2 this is info logs
+WARNING:root:--> 3 this is warning logs
+ERROR:root:--> 4 this is error logs
+CRITICAL:root:--> 5 this is critical logs
