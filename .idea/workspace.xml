@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0dc2c401-d0d6-4833-bdf8-bd46959a6960" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/day10/homework/ftp03/client.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/day10/homework/ftp03/client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classes/day10/homework/ftp03/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/classes/day10/homework/ftp03/server.py" afterDir="false" />
     </list>
@@ -24,7 +25,7 @@
     <SUITE FILE_PATH="coverage/Py27$myCode__1_.coverage" NAME="myCode (1) Coverage Results" MODIFIED="1566120313682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day07" />
     <SUITE FILE_PATH="coverage/Py27$start__1_.coverage" NAME="start (1) Coverage Results" MODIFIED="1567866265032" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day09/homework/ftp07/client" />
     <SUITE FILE_PATH="coverage/Py27$logging4.coverage" NAME="logging模块4 Coverage Results" MODIFIED="1568533821413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/practice/logging时间切" />
-    <SUITE FILE_PATH="coverage/Py27$server.coverage" NAME="server Coverage Results" MODIFIED="1568648492953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/ftp03" />
+    <SUITE FILE_PATH="coverage/Py27$server.coverage" NAME="server Coverage Results" MODIFIED="1568730400713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/ftp03" />
     <SUITE FILE_PATH="coverage/Py27$homework06.coverage" NAME="homework06 Coverage Results" MODIFIED="1564074768001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day03/homework" />
     <SUITE FILE_PATH="coverage/Py27$write_file.coverage" NAME="write_file Coverage Results" MODIFIED="1564306831216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day04/class" />
     <SUITE FILE_PATH="coverage/Py27$homework303.coverage" NAME="homework303 Coverage Results" MODIFIED="1565438145251" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day05/homework" />
@@ -51,14 +52,14 @@
     <SUITE FILE_PATH="coverage/Py27$homework07.coverage" NAME="homework07 Coverage Results" MODIFIED="1564080312035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day03/homework" />
     <SUITE FILE_PATH="coverage/Py27$re.coverage" NAME="re Coverage Results" MODIFIED="1565704602079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day06/practice" />
     <SUITE FILE_PATH="coverage/Py27$3_picklejson.coverage" NAME="3.pickle和json Coverage Results" MODIFIED="1567232624907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day08/class" />
-    <SUITE FILE_PATH="coverage/Py27$client__1_.coverage" NAME="client (1) Coverage Results" MODIFIED="1568482164285" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/ftp02" />
+    <SUITE FILE_PATH="coverage/Py27$client__1_.coverage" NAME="client (1) Coverage Results" MODIFIED="1568730978474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/ftp02" />
     <SUITE FILE_PATH="coverage/Py27$stu_sys3.coverage" NAME="stu_sys3 Coverage Results" MODIFIED="1567272890438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day08/homework/stusystem2" />
     <SUITE FILE_PATH="coverage/Py27$demo5.coverage" NAME="demo5 Coverage Results" MODIFIED="1564505068156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day03/homework" />
     <SUITE FILE_PATH="coverage/Py27$8_re.coverage" NAME="8.re模块 Coverage Results" MODIFIED="1565353095441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day05/class" />
     <SUITE FILE_PATH="coverage/Py27$homework04.coverage" NAME="homework04 Coverage Results" MODIFIED="1564762505903" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day04/homework" />
     <SUITE FILE_PATH="coverage/Py27$client2.coverage" NAME="client2 Coverage Results" MODIFIED="1567325773351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day09/class/socket初始utp" />
     <SUITE FILE_PATH="coverage/Py27$homework301.coverage" NAME="homework301 Coverage Results" MODIFIED="1565421877139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day05/homework" />
-    <SUITE FILE_PATH="coverage/Py27$client.coverage" NAME="client Coverage Results" MODIFIED="1568648494596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/ftp03" />
+    <SUITE FILE_PATH="coverage/Py27$client.coverage" NAME="client Coverage Results" MODIFIED="1568730443357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/ftp03" />
     <SUITE FILE_PATH="coverage/Py27$p3.coverage" NAME="p3 Coverage Results" MODIFIED="1562690548271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day01/lufei" />
     <SUITE FILE_PATH="coverage/Py27$homework304.coverage" NAME="homework304 Coverage Results" MODIFIED="1565434958049" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day05/homework" />
     <SUITE FILE_PATH="coverage/Py27$server__2_.coverage" NAME="server (2) Coverage Results" MODIFIED="1568385431646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/ftp01" />
@@ -66,7 +67,7 @@
     <SUITE FILE_PATH="coverage/Py27$p01.coverage" NAME="p01 Coverage Results" MODIFIED="1564234926736" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day03/practice" />
     <SUITE FILE_PATH="coverage/Py27$homework01.coverage" NAME="homework01 Coverage Results" MODIFIED="1564746125261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day04/homework" />
     <SUITE FILE_PATH="coverage/Py27$homework03.coverage" NAME="homework03 Coverage Results" MODIFIED="1564750848095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day04/homework" />
-    <SUITE FILE_PATH="coverage/Py27$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1568480952404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/9-11分享" />
+    <SUITE FILE_PATH="coverage/Py27$server__1_.coverage" NAME="server (1) Coverage Results" MODIFIED="1568730976156" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day10/homework/ftp02" />
     <SUITE FILE_PATH="coverage/Py27$homework09.coverage" NAME="homework09 Coverage Results" MODIFIED="1564504917944" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day03/homework" />
     <SUITE FILE_PATH="coverage/Py27$login.coverage" NAME="login Coverage Results" MODIFIED="1566660280884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day07/homework/homework01" />
     <SUITE FILE_PATH="coverage/Py27$Course.coverage" NAME="Course Coverage Results" MODIFIED="1566468080039" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day07/homework/homework01" />
@@ -79,14 +80,14 @@
     <SUITE FILE_PATH="coverage/Py27$13_.coverage" NAME="13.人狗大战 Coverage Results" MODIFIED="1566464953530" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classes/day07/class" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.6123033">
+    <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp03/server.py">
+            <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp02/server.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1836">
-                  <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+                <state relative-caret-position="285">
+                  <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -94,20 +95,15 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp03/userinfo">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
         <leaf>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp03/client.py">
+            <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp02/client.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1418">
-                  <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+                <state relative-caret-position="1125">
+                  <caret line="68" selection-start-line="68" selection-end-line="68" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -205,9 +201,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="928" />
-    <option name="width" value="1440" />
-    <option name="height" value="1632" />
+    <option name="width" value="2560" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -248,6 +243,14 @@
               <item name="classes" type="462c0819:PsiDirectoryNode" />
               <item name="day10" type="462c0819:PsiDirectoryNode" />
               <item name="homework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Py27" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Py27" type="462c0819:PsiDirectoryNode" />
+              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="day10" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
+              <item name="ftp02" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Py27" type="b2602c69:ProjectViewProjectNode" />
@@ -298,7 +301,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.client">
+  <component name="RunManager" selected="Python.client (1)">
+    <configuration name="client (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Py27" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classes/day10/homework/ftp02" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classes/day10/homework/ftp02/client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Py27" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -321,50 +346,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="logging模块2" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Py27" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classes/day10/practice" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classes/day10/practice/logging模块2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="logging模块3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Py27" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classes/day10/practice/logging大小切" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classes/day10/practice/logging大小切/logging模块3.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="logging模块4" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Py27" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -379,6 +360,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classes/day10/practice/logging时间切/logging模块4.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="server (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Py27" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/classes/day10/homework/ftp02" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/classes/day10/homework/ftp02/server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -411,11 +414,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.client (1)" />
+        <item itemvalue="Python.server (1)" />
         <item itemvalue="Python.client" />
         <item itemvalue="Python.server" />
         <item itemvalue="Python.logging模块4" />
-        <item itemvalue="Python.logging模块3" />
-        <item itemvalue="Python.logging模块2" />
       </list>
     </recent_temporary>
   </component>
@@ -501,23 +504,23 @@
       <workItem from="1568462753000" duration="2919000" />
       <workItem from="1568479213122" duration="3073000" />
       <workItem from="1568520169446" duration="6537000" />
-      <workItem from="1568643887169" duration="4396000" />
+      <workItem from="1568643887169" duration="4455000" />
+      <workItem from="1568724878538" duration="4880000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="232814000" />
+    <option name="totallyTimeSpent" value="237753000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="2560" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="2560" height="1440" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49621212" visible="true" weight="0.12947068" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49621212" visible="true" weight="0.08061954" />
       <window_info id="Structure" order="1" sideWeight="0.5037879" side_tool="true" weight="0.12210012" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329927" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.2128514" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.52554744" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -880,30 +883,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp02/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="65" column="49" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp02/userinfo">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp02/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1153">
-          <caret line="17" column="18" lean-forward="true" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp03/userinfo">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/socketserver.py">
@@ -913,20 +893,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp03/userinfo">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp03/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="17" column="34" lean-forward="true" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp03/client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1418">
-          <caret line="85" lean-forward="true" selection-start-line="85" selection-end-line="85" />
+        <state relative-caret-position="344">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp03/server.py">
+    <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp02/server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1836">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+        <state relative-caret-position="285">
+          <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/day10/homework/ftp02/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

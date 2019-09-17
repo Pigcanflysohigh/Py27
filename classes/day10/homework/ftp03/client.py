@@ -12,9 +12,13 @@ def send_dic(sk,dic,protocol = False):
         sk.send(len_dic)
     sk.send(byte_d)
 
-def recv_dic(sk):
-    ret = sk.recv(1024).decode('utf-8')
-    res_dic = json.loads(ret)
+def recv_dic(sk,protocol=False, msg_len=1024):
+    if protocol:
+        byte_len = sk.recv(4)
+        msg_len = struct.unpack('i', byte_len)[0]
+    msg = sk.recv(msg_len)
+    str_msg = msg.decode('utf-8')
+    res_dic = json.loads(str_msg)
     return res_dic
 
 def get_user(opt='login'):
@@ -72,7 +76,17 @@ def download(sk):
     # 输入文件名，会默认从server端的remote文件夹下拉去文件
     path = input('请输入要下载的文件:')
     dic = {'file':path,'operate':'download'}
-    send_dic(sk,dic,True)
+    send_dic(sk,dic,True)# 是否需要自定义协议
+    res_dic = recv_dic(sk,protocol=True)
+    local_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp03/local'
+    filename = res_dic['filename']
+    file_path = os.path.join(local_path,filename)
+    with open(file_path,mode='wb') as f:
+        while res_dic['filesize'] > 0:
+            content = sk.recv(1024)
+            f.write(content)
+            res_dic['filesize'] -= len(content)
+
 
 def myquit(sk):
     pass

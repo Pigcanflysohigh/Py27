@@ -40,10 +40,14 @@ class Auth:
 
 class Myserver(socketserver.BaseRequestHandler):
 
-
-	def my_send(self,dic):
-		str_d = json.dumps(dic)
-		self.request.send(str_d.encode('utf-8'))
+	def my_send(self, dic, protocol=False):
+		byte_d = json.dumps(dic).encode('utf-8')
+		if protocol:  # 如果protocol是true，就按照协议来执行send，否则直接发送json字典即可
+			# 为避免黏包，在实际发送字典之前，先把字典的字节类型的长度计算出来，然后发送字典的长度，再发字典内容
+			len_b = len(byte_d)
+			len_dic = struct.pack('i', len_b)  # 转换为固定的4个字节
+			self.request.send(len_dic)
+		self.request.send(byte_d)
 
 	def my_recv(self,protocol = False,msg_len = 1024):
 		if protocol:
@@ -78,7 +82,17 @@ class Myserver(socketserver.BaseRequestHandler):
 			elif opt_dic['operate'] == 'download':
 				file = os.path.join(remote_path,opt_dic['file'])
 				if os.path.isfile(file):
-					print('there is a file')
+					filename = os.path.basename(file)
+					filesize = os.path.getsize(file)
+					dic = {'filename':filename,'filesize':filesize,'operate':'download'}
+					self.my_send(dic,True)
+					with open(file,'rb') as f:
+						while filesize > 0:
+							content = f.read(1024)
+							self.request.send(content)
+							filesize -= len(content)
+
+
 				else:
 					print('no file')
 
