@@ -62,47 +62,48 @@ class Myserver(socketserver.BaseRequestHandler):
 
 
 	def handle(self):
-		while True:
-			# conn == self.request
-			opt_dic = self.my_recv()
-			base_name = opt_dic['username']
-			if hasattr(Auth,opt_dic['operate']):
-				dic = getattr(Auth,opt_dic['operate'])(opt_dic)
-				self.my_send(dic)
-			# 判断登录的结果在dic中，如果登录、注册成功，用户上传或者下载
-			if dic['flag']:
-				while True:
-					opt_dic = self.my_recv(protocol=True)
-					remote_path = os.path.join(base_path,base_name)
-					if opt_dic['operate'] == 'upload':
-						# 上传
-						# remote_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp03/remote'
-						#remote_path = os.path.join(base_path,base_name)
-						filename = opt_dic['filename']
-						file_path = os.path.join(remote_path,filename)
-						with open(file_path,mode='wb') as f:
-							while opt_dic['filesize'] > 0:
-								content = self.request.recv(1024)
-								f.write(content)
-								opt_dic['filesize'] -= len(content)
-					elif opt_dic['operate'] == 'download':
-						file = os.path.join(remote_path,opt_dic['file'])
-						if os.path.isfile(file):
-							filename = os.path.basename(file)
-							filesize = os.path.getsize(file)
-							dic = {'filename':filename,'filesize':filesize,'isfile':'yes','operate':'download'}
+		try:
+			while True:
+				# conn == self.request
+				opt_dic = self.my_recv()
+				base_name = opt_dic['username']
+				if hasattr(Auth,opt_dic['operate']):
+					dic = getattr(Auth,opt_dic['operate'])(opt_dic)
+					self.my_send(dic)
+				# 判断登录的结果在dic中，如果登录、注册成功，用户上传或者下载
+				if dic['flag']:
+					while True:
+						opt_dic = self.my_recv(protocol=True)
+						remote_path = os.path.join(base_path,base_name)
+						if opt_dic['operate'] == 'upload':
+							# 上传
+							filename = opt_dic['filename']
+							file_path = os.path.join(remote_path,filename)
+							with open(file_path,mode='wb') as f:
+								while opt_dic['filesize'] > 0:
+									content = self.request.recv(1024)
+									f.write(content)
+									opt_dic['filesize'] -= len(content)
+						elif opt_dic['operate'] == 'download':
+							file = os.path.join(remote_path,opt_dic['file'])
+							if os.path.isfile(file):
+								filename = os.path.basename(file)
+								filesize = os.path.getsize(file)
+								dic = {'filename':filename,'filesize':filesize,'isfile':'yes','operate':'download'}
+								self.my_send(dic,True)
+								with open(file,'rb') as f:
+									while filesize > 0:
+										content = f.read(1024)
+										self.request.send(content)
+										filesize -= len(content)
+							else:
+								dic = {'isfile':'no'}
+								self.my_send(dic,True)
+						elif opt_dic['operate'] == 'quite':
+							dic = {'signal':'再见!'}
 							self.my_send(dic,True)
-							with open(file,'rb') as f:
-								while filesize > 0:
-									content = f.read(1024)
-									self.request.send(content)
-									filesize -= len(content)
-						else:
-							dic = {'isfile':'no'}
-							self.my_send(dic,True)
-					elif opt_dic['operate'] == 'quite':
-						dic = {'signal':'再见!'}
-						self.my_send(dic,True)
+		except Exception:
+			print('%s用户 退出!' % base_name)
 
 
 # server端需要完成反射

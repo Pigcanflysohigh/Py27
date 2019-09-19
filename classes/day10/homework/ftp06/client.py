@@ -3,6 +3,7 @@ import socket
 import struct
 import json
 
+base_path = os.path.dirname(__file__)
 def send_dic(sk,dic,protocol = False):
     byte_d = json.dumps(dic).encode('utf-8')
     if protocol:    #如果protocol是true，就按照协议来执行send，否则直接发送json字典即可
@@ -78,7 +79,9 @@ def download(sk):
     dic = {'file':path,'operate':'download'}
     send_dic(sk,dic,True)# 是否需要自定义协议
     res_dic = recv_dic(sk,protocol=True)
-    local_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp05/local'
+    local_path = os.path.join(base_path,'local')
+    print(local_path)
+    #local_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp06/local'
     if res_dic['isfile'] == 'yes':
         filename = res_dic['filename']
         file_path = os.path.join(local_path,filename)
