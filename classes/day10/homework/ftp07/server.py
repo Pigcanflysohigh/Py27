@@ -3,8 +3,17 @@ import socketserver
 import struct
 import json
 import hashlib
+import logging
 
 base_path = os.path.join(os.path.dirname(__file__),'remote')
+
+fh = logging.FileHandler(filename='message.log',mode='a',encoding='utf-8') #定义fh文件信息
+logging.basicConfig(level=logging.INFO,
+                    handlers=[fh],
+                    datefmt='%Y-%m-%d %H:%M:%S',    #定义format中指定的时间格式
+                    format='%(asctime)s - %(name)s - %(levelname)s -%(module)s -%(lineno)d:  %(message)s'
+                    )
+
 class Auth:
 	@staticmethod
 	def get_md5(opt_dic):
@@ -23,9 +32,11 @@ class Auth:
 				user, passwd = line.strip().split('|')
 				if opt_dic['username'] == user and pwd == passwd:
 					dic = {'operate': 'login', 'flag': True}
+					logging.info('%s用户，登录系统' % opt_dic['username'])
 					break
 			else:
 				dic = {'operate': 'login', 'flag': False}
+				logging.warning('%s用户，登录失败' % opt_dic['username'])
 			return dic
 
 	@classmethod
@@ -37,6 +48,7 @@ class Auth:
 		with open('userinfo', mode='a', encoding='utf-8') as f:
 			f.write('%s|%s\n' % (opt_dic['username'], pwd))
 		# 如果登录成功，则把信息发送给客户端
+		logging.info('%s用户，注册成功' % opt_dic['username'])
 		dic = {'operate': 'register', 'flag': True}
 		return dic
 
@@ -84,6 +96,7 @@ class Myserver(socketserver.BaseRequestHandler):
 									content = self.request.recv(1024)
 									f.write(content)
 									opt_dic['filesize'] -= len(content)
+							logging.info('%s用户上传了%s文件' % (base_name,opt_dic['filename']))
 						elif opt_dic['operate'] == 'download':
 							file = os.path.join(remote_path,opt_dic['file'])
 							if os.path.isfile(file):
@@ -96,21 +109,24 @@ class Myserver(socketserver.BaseRequestHandler):
 										content = f.read(1024)
 										self.request.send(content)
 										filesize -= len(content)
+								logging.info('%s用户下载了%s文件' % (base_name,dic['filename']))
 							else:
 								dic = {'isfile':'no'}
 								self.my_send(dic,True)
 						elif opt_dic['operate'] == 'quite':
 							dic = {'signal':'再见!'}
 							self.my_send(dic,True)
+							logging.warning('%s用户，退出登录!' % base_name)
 		except Exception:
-			print('%s用户 退出!' % base_name)
+			print('%s用户，断开连接!' % base_name)
+			logging.warning('%s用户，断开连接!' % base_name)
 
 
 # server端需要完成反射
 
 # 用类去反射一个方法，而不是用对象去反射一个方法，那么这个类必然不能是一个以self为基准的一个类，需要将类定义为staticmethod
 
-sk = socketserver.ThreadingTCPServer(('127.0.0.1',9003),Myserver)
+sk = socketserver.ThreadingTCPServer(('127.0.0.1',9004),Myserver)
 
 sk.serve_forever()
 

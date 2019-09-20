@@ -1,0 +1,16 @@
+2019-09-21 01:12:22 - root - INFO -server -35:  admin用户，登录系统
+2019-09-21 01:12:55 - root - INFO -server -99:  admin用户上传了malingang.py文件
+2019-09-21 01:13:06 - root - INFO -server -99:  admin用户上传了malingang.py文件
+2019-09-21 01:13:14 - root - INFO -server -112:  admin用户下载了malingang.py文件
+2019-09-21 01:13:29 - root - WARNING -server -119:  admin用户，退出登录!
+2019-09-21 01:13:29 - root - WARNING -server -122:  admin用户，断开连接!
+2019-09-21 01:13:43 - root - WARNING -server -39:  test用户，登录失败
+2019-09-21 01:13:50 - root - WARNING -server -122:  test用户，断开连接!
+2019-09-21 01:14:42 - root - INFO -server -35:  admin用户，登录系统
+2019-09-21 01:15:04 - root - INFO -server -99:  admin用户上传了malingang.py文件
+2019-09-21 01:15:06 - root - WARNING -server -119:  admin用户，退出登录!
+2019-09-21 01:15:06 - root - WARNING -server -122:  admin用户，断开连接!
+2019-09-21 01:15:45 - root - INFO -server -35:  test用户，登录系统
+2019-09-21 01:16:10 - root - INFO -server -99:  test用户上传了linux.mkv文件
+2019-09-21 01:16:12 - root - WARNING -server -119:  test用户，退出登录!
+2019-09-21 01:16:12 - root - WARNING -server -122:  test用户，断开连接!

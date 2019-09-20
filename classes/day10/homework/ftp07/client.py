@@ -1,9 +1,21 @@
 import os
+import sys
 import socket
 import struct
 import json
 
 base_path = os.path.dirname(__file__)
+
+def processBar(num, total):
+    rate = num / total
+    rate_num = int(rate * 100)
+    if rate_num == 100:
+        r = '\r%s>%d%%\n' % ('=' * rate_num, rate_num,)
+    else:
+        r = '\r%s>%d%%' % ('=' * rate_num, rate_num,)
+    sys.stdout.write(r)
+    sys.stdout.flush
+
 def send_dic(sk,dic,protocol = False):
     byte_d = json.dumps(dic).encode('utf-8')
     if protocol:    #如果protocol是true，就按照协议来执行send，否则直接发送json字典即可
@@ -66,12 +78,16 @@ def upload(sk):
         filename = os.path.basename(path)
         filesize = os.path.getsize(path)
         dic = {'filename':filename,'filesize':filesize,'operate':'upload'}
+        filesize_bar = dic['filesize']
+        sendlen_bar = 0
         send_dic(sk,dic,protocol=True)   # 表示通过协议传输，对比send_dic函数protocal参数值
         with open(path,'rb') as f:
             while filesize > 0:
                 content = f.read(1024)
                 sk.send(content)
                 filesize -= len(content)
+                sendlen_bar += len(content)
+                processBar(sendlen_bar,filesize_bar)
 
 def download(sk):
     # 输入文件名，会默认从server端的remote文件夹下拉去文件
@@ -80,16 +96,19 @@ def download(sk):
     send_dic(sk,dic,True)# 是否需要自定义协议
     res_dic = recv_dic(sk,protocol=True)
     local_path = os.path.join(base_path,'local')
-    print(local_path)
     #local_path = '/Users/malingang/Knowledge/Python/Pycharm_Project/Py27/classes/day10/homework/ftp06/local'
     if res_dic['isfile'] == 'yes':
         filename = res_dic['filename']
         file_path = os.path.join(local_path,filename)
+        filesize_bar = res_dic['filesize']
+        recvlen_bar = 0
         with open(file_path,mode='wb') as f:
             while res_dic['filesize'] > 0:
                 content = sk.recv(1024)
                 f.write(content)
                 res_dic['filesize'] -= len(content)
+                recvlen_bar += len(content)
+                processBar(recvlen_bar,filesize_bar)
     else:
         print('没有这个文件!')
 
@@ -112,7 +131,7 @@ def choose_opt(opt_lst):
     return func
 
 sk = socket.socket()
-sk.connect(('127.0.0.1',9003))
+sk.connect(('127.0.0.1',9004))
 
 while True:
     #选择 登录/注册
