@@ -18,7 +18,7 @@ create table book(
 bookname char(50),
 author char(50),
 publisher char(50),
-price int(8),
+price int,
 date date
 )
 charset = utf8
@@ -47,15 +47,21 @@ select avg(price) from book where author='alex';
 -- 6.查询人民音乐不好听出版社出版的所有图书
 select bookname from book where publisher='人民音乐不好听出版社';
 -- 7.查询人民音乐出版社出版的alex写的所有图书和价格
+select bookname,price from book where author='alex' and publisher='人民音乐不好听出版社';
 -- 8.找出出版图书均价最高的作者
+select author from book group by author order by avg(price) desc limit 1;
 -- 9.找出最新出版的图书的作者和出版社
+select author,publisher from book order by date desc limit 1;
 -- 10.显示各出版社出版的所有图书
+select publisher,group_concat(bookname) from book group by publisher;
 -- 11.查找价格最高的图书，并将它的价格修改为50元
--- 12.删除价格最低的那本书对应的数据
+update book set price=50 where price =(select * from ((select max(price) from book) as tab1));
 -- 13.将所有alex写的书作业修改成alexsb
+update book set bookname='alexsb' where author='alex';
 -- 14.select year(publish_date) from book
 -- 自己研究上面sql语句中的year函数的功能，完成需求：
 -- 将所有2017年出版的图书从数据库中删除
+delete from book where year(date)='2017';
 -- 15.有文件如下，请根据链接自学pymysql模块，使用python写代码将文件中的数据写入数据库
 -- 学python从开始到放弃|alex|人民大学出版社|50|2018-7-1
 -- 学mysql从开始到放弃|egon|机械工业出版社|60|2018-6-3

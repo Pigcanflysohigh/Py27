@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publisher_list</title>
+
+    {% load static %}
+
+{#    <link rel="stylesheet" href="/static1/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">#}
+    <link rel="stylesheet" href="{% static '/plugins/bootstrap-3.3.7-dist/css/bootstrap.css' %}">   {# static 对应settings.py文件里STATIC_URL变量 #}
+{#    <link rel="stylesheet" href="/static1/css/dashboard.css">#}
+    <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+
+    {% block css %}
+    
+    {% endblock %}
+</head>
+
+<body>
+
+{% include 'nav.html' %}
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+            <li class="active"><a href="{% url 'app01:pub_list' %}">出版社列表 <span class="sr-only">(current)</span></a></li>
+            <li><a href="{% url 'app01:book_list' %}">图书列表</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        
+            {% block content %}
+            
+            {% endblock %}
+
+        </div>
+      </div>
+    </div>
+
+{% block js %}
+
+{% endblock %}
+
+</body>
+
+</html>

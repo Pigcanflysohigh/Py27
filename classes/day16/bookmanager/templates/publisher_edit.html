@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <p>输入新的名称</p> <input type="text" name="pub_name" value="{{ name }}"> <span>{{ error }}</span>
+    <p><button>提交</button></p>
+</form>
+{% endblock %}

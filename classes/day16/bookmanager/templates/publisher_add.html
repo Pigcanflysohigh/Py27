@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>
+            新增出版社：<input type="text" name="pub_name"> <span>{{ error }}</span>
+        </p>
+        <p>
+            <button>提交</button>
+        </p>
+    </form>
+    </table>
+{% endblock %}

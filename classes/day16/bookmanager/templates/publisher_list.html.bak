@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>publisher_list</title>
+    <link rel="stylesheet" href="/static/plugins/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+{#<body>#}
+{#<h1>出版社列表</h1>#}
+{#<table border="1px">#}
+{#    <thead>#}
+{#    <tr>#}
+{#        <th>序号</th>#}
+{#        <th>ID</th>#}
+{#        <th>出版社名</th>#}
+{#        <th>操作</th>#}
+{#    </tr>#}
+{#    </thead>#}
+{#    <tbody>#}
+{#    {% for foo in all_Pub %}#}
+{#        <tr>#}
+{#            <td>{{ forloop.counter }}</td>#}
+{#            <td>{{ foo.id }}</td>#}
+{#            <td>{{ foo.name }}</td>#}
+{#            <td>#}
+{#                <a href="/publisher_del/?pk={{ foo.id }}">删除</a>#}
+{#                <a href="/publisher_edit/?pk={{ foo.id }}">编辑</a>#}
+{#            </td>#}
+{#            {% endfor %}#}
+{#        </tr>#}
+{#    </tbody>#}
+{#</table>#}
+{#</body>#}
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{% url 'app01:pub_list' %}">出版社信息管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+            <li class="active"><a href="{% url 'app01:pub_list' %}">出版社列表 <span class="sr-only">(current)</span></a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Analytics</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h2 class="sub-header">出版社列表</h2>
+            <a class="btn btn-info btn-sm" href="{% url 'app01:pub_add' %}">添加</a>
+          <div class="table-responsive">
+              <table class="table table-striped table-hover">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>ID</th>
+                    <th>出版社名</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for foo in all_Pub %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ foo.id }}</td>
+                        <td>{{ foo.name }}</td>
+                        <td>
+                            <a class="btn btn-danger btn-sm" href="{% url 'app01:pub_del' foo.id %}">删除</a>
+                            <a class="btn btn-primary btn-sm" href="{% url 'app01:pub_edit' foo.id %}">编辑</a>
+                        </td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+              </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+
+</html>

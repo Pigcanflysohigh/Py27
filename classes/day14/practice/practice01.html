@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div>
+        <ul>
+            <li class="city">北京</li>
+            <li class="city"><a href="">上海</a></li>
+            <li class="city">天津</li>
+        </ul>
+    </div>
+
+    <button id="addbtn">增加li</button>
+</body>
+<script src="jquery-3.4.1.js">
+    $(function () {
+        $("#addbtn").click(function () {
+            var oCont = prompt('输入');
+            if(oCont !== ''){
+                var oLi = document.createElement('li');
+                $('oLi').text(oCont);
+                $('ul').append(oLi)
+            }
+
+        })
+
+    })
+</script>
+</html>
